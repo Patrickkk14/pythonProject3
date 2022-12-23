@@ -1,0 +1,133 @@
+#: import utils kivy.utils
+#:include homescreen.kv
+
+
+GridLayout:
+    cols:1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name:"home_screen"
+            id: home_screen
+        HistoryScreen:
+            name:"history_screen"
+            id: history_screen
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "background.png"
+
+        Image:
+            source: "androidlogo.png"
+            size_hint: (.4, .5)
+            pos_hint: {"center_x": .5, "center_y": .87}
+
+        Label:
+            text: "SMART WATER METER"
+            pos_hint: {"center_x": .5, "center_y": .72}
+            halign: "center"
+            font_style: "Caption"
+        Label:
+            text: "IOT Water Meter"
+            pos_hint: {"center_x": .5, "center_y": .69}
+            halign: "center"
+            font_style: "Caption"
+
+
+
+
+
+
+        Label:
+            pos_hint: {"center_x": 0.40, "center_y": 0.5}
+            size_hint: 1, .1
+            font_size: 15
+            text: "Liters per Minute:  "
+            bold:True
+        Label:
+            id: Lminutes
+            pos_hint: {"center_x": 0.70, "center_y": 0.5}
+            size_hint: 1, .1
+            text: ""
+
+
+
+        Label:
+            pos_hint: {"center_x": 0.40, "center_y": 0.4}
+            size_hint: 1, .1
+            font_size: 15
+            text: "Total ML Consumption:  "
+            bold:True
+        Label:
+            id: ml_consumption
+            pos_hint: {"center_x": 0.70, "center_y": 0.4}
+            size_hint: 1, .1
+            text: " "
+
+        Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "History"
+            id: button
+            on_release:
+                app.change_screen("history_screen")
+
+
+<HistoryScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "background.png"
+        Label:
+            text: "History"
+            pos_hint: {"center_x": .5, "center_y": .90}
+            halign: "center"
+            font_size: 30
+            bold:True
+
+
+        Label:
+            pos_hint: {"center_x": 0.20, "center_y": 0.8}
+            size_hint: 1, .1
+            font_size: 13
+            text: "Liters per Minute:  "
+        Label:
+            id: Lminutes
+            pos_hint: {"center_x": 0.35, "center_y": 0.8}
+            size_hint: 1, .1
+            font_size: 13
+            text: ""
+
+
+
+        Label:
+            pos_hint: {"center_x": 0.65, "center_y": 0.8}
+            size_hint: 1, .1
+            font_size: 13
+            text: "Total ML Consumption:  "
+        Label:
+            id: ml_consumption
+            pos_hint: {"center_x": 0.87, "center_y": 0.8}
+            size_hint: 1, .1
+            font_size: 13
+            text: " "
+
+
+        Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "Back to Home"
+            id: okbutton
+            on_release:
+                app.change_screen("home_screen")

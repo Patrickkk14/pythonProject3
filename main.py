@@ -59,22 +59,6 @@ class MainApp(App):
         con[counter] = start + 1
 
 
-    #---- History starts here---- #
-        Lminutes = self.root.ids['history_screen'].ids['Lminutes']
-        Lminutes.text = str(data['Liters per minute']) + "L"
-        ml_consumption = self.root.ids['history_screen'].ids['ml_consumption']
-        ml_consumption.text = str(data['Total Liquid Released']) + "ML"
-
-    #---- History ends here---- #
-
-
-
-
-
-    def change_screen(self, screen_name):
-        print(self.root.ids)
-        screen_manager = (self.root.ids['screen_manager'])
-        screen_manager.current = screen_name
 
 
 

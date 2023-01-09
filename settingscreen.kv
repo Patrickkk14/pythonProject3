@@ -1,0 +1,49 @@
+#: import utils kivy.utils
+<SettingScreen>:
+    GridLayout:
+        cols:1
+
+
+
+        Label:
+            id:history_list
+            pos_hint: {"center_x": .5, "center_y": .69}
+            text: root.t
+
+            multiline: True
+
+        Label:
+            id:gd
+            size_hint_y:None
+
+
+
+
+
+
+        Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "History"
+            id: viewhistory
+            on_release:
+                app.change_screen("home_screen")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

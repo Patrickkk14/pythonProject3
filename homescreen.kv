@@ -1,17 +1,4 @@
 #: import utils kivy.utils
-#:include homescreen.kv
-
-
-GridLayout:
-    cols:1
-    ScreenManager:
-        id: screen_manager
-        HomeScreen:
-            name:"home_screen"
-            id: home_screen
-        HistoryScreen:
-            name:"history_screen"
-            id: history_screen
 <HomeScreen>:
     FloatLayout:
         canvas:
@@ -20,12 +7,12 @@ GridLayout:
             Rectangle:
                 pos: self.pos
                 size: self.size
-                source: "background.png"
+                source: "backgroundd.png"
 
         Image:
-            source: "androidlogo.png"
+            source: "logoo.png"
             size_hint: (.4, .5)
-            pos_hint: {"center_x": .5, "center_y": .87}
+            pos_hint: {"center_x": .5, "center_y": .85}
 
         Label:
             text: "SMART WATER METER"
@@ -39,12 +26,15 @@ GridLayout:
             font_style: "Caption"
 
 
+
+
+
+
         Label:
             pos_hint: {"center_x": 0.40, "center_y": 0.5}
             size_hint: 1, .1
             font_size: 15
             text: "Liters per Minute:  "
-            bold:True
         Label:
             id: Lminutes
             pos_hint: {"center_x": 0.70, "center_y": 0.5}
@@ -58,12 +48,35 @@ GridLayout:
             size_hint: 1, .1
             font_size: 15
             text: "Total ML Consumption:  "
-            bold:True
         Label:
             id: ml_consumption
             pos_hint: {"center_x": 0.70, "center_y": 0.4}
             size_hint: 1, .1
             text: " "
 
+
+
+        Button:
+            pos_hint: {"center_x": 0.8, "center_y": 0.2}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "History"
+            id: okbutton
+            on_release:
+                app.change_screen("setting_screen")
+
+        Button:
+            pos_hint: {"center_x": 0.2, "center_y": 0.2}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "Graph"
+            id: history1
+            on_press: app.view_graph()
+
+        Label:
+            id: printni
+            pos_hint: {"center_x": 0.1, "center_y": 0.1}
+            size_hint: 1, .1
+            text: " "
 
 

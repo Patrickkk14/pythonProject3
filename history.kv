@@ -1,0 +1,19 @@
+<HistoryScreen>:
+   Gridlayout:
+    cols: 2
+          Label:
+            pos_hint: {"center_x": 0.40, "center_y": 0.5}
+            size_hint: 1, .1
+            font_size: 15
+            text: "Liters per Minute:  "
+
+
+
+          Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            size_hint: None, None
+            size: "100dp" , "50dp"
+            text: "History"
+            id: history
+            on_release:
+                app.change_screen("home_screen")

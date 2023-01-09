@@ -1,0 +1,16 @@
+#:include homescreen.kv
+#:include settingscreen.kv
+
+GridLayout:
+    cols:1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name:"home_screen"
+            id: home_screen
+        SettingScreen:
+            name:"setting_screen"
+            id: setting_screen
+        HistoryScreen:
+            name:"history_screen"
+            id: history_screen
